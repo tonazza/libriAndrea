@@ -1,0 +1,6 @@
+1) copiare all'interno di questa cartella il file "e:\OneDrive\Documents\vari\libriAndrea.xlsm", contenente alcune righe per le quali è compilato solo l'ISBN e si vuole completare autori, titolo e anno
+
+2) con file chiuso, lanciare lo script da console con il comando
+python aggiornaLibri.py
+
+il programma aggiornerà le righe e salverà il file, lasciandolo aperto in Excel
