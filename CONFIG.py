@@ -1,4 +1,5 @@
 PERCORSO_FILE_EXCEL = "libriAndrea.xlsm"
+#PERCORSO_FILE_EXCEL = "libriGiulia.xlsx"
 NOME_FOGLIO = "lista"
 PRIMA_RIGA_TABELLA = 2
 COLONNA_ISBN = 1

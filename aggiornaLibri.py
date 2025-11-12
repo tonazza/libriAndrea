@@ -23,19 +23,22 @@ def aggiorna_lista_libri(listaLibri):
                 ic("Completo la riga {} ...".format(riga))
                 # se c'è l'ISBN faccio la richiesta e riempio le celle
                 apiUrl = SECRETS.STRINGA_SX_API + isbn + SECRETS.STRINGA_DX_API
-                rispostaGrezza = requests.get(apiUrl)
-                if (rispostaGrezza.status_code ==200):
-                    risposta = rispostaGrezza.json()
-                    autori = json.dumps(risposta['items'][0]['volumeInfo']['authors'])
-                    titolo =risposta['items'][0]['volumeInfo']['title']
-                    data = risposta['items'][0]['volumeInfo']['publishedDate']
-                    ic("{} {} {}".format(autori, titolo, data))
-                    listaLibri.range((riga, CONFIG.COLONNA_AUTORI)).value = autori
-                    listaLibri.range((riga, CONFIG.COLONNA_TITOLO)).value = titolo
-                    listaLibri.range((riga, CONFIG.COLONNA_DATA)).value = data
-                else:
-                    print("Status code API: {}".format(rispostaGrezza.status_code))
-                sleep(0.5)
+                try:
+                    rispostaGrezza = requests.get(apiUrl)
+                    if (rispostaGrezza.status_code ==200):
+                        risposta = rispostaGrezza.json()
+                        autori = json.dumps(risposta['items'][0]['volumeInfo']['authors'])
+                        titolo =risposta['items'][0]['volumeInfo']['title']
+                        data = risposta['items'][0]['volumeInfo']['publishedDate']
+                        ic("{} {} {}".format(autori, titolo, data))
+                        listaLibri.range((riga, CONFIG.COLONNA_AUTORI)).value = autori
+                        listaLibri.range((riga, CONFIG.COLONNA_TITOLO)).value = titolo
+                        listaLibri.range((riga, CONFIG.COLONNA_DATA)).value = data
+                    else:
+                        print("Status code API: {}".format(rispostaGrezza.status_code))
+                    sleep(0.5)
+                except:
+                    ic("errore")
         
         riga = riga+1
         

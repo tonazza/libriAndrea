@@ -1,6 +1,11 @@
-1) copiare all'interno di questa cartella il file "e:\OneDrive\Documents\vari\libriAndrea.xlsm", contenente alcune righe per le quali è compilato solo l'ISBN e si vuole completare autori, titolo e anno
+1) copiare all'interno di questa cartella uno di questi file "e:\OneDrive\Documents\vari\libriAndrea.xlsm"
+"e:\OneDrive\Documents\Giulia\libriGiulia.xlsx"
+contenente alcune righe per le quali è compilato solo l'ISBN e si vuole completare autori, titolo e anno
 
-2) con file chiuso, lanciare lo script da console con il comando
+2) nel file CONFIG.py, verificare/impostare il valore della variabile PERCORSO_FILE_EXCEL al nome del file copiato al punto 1 (che si vuole aggiornare)
+
+3) con file chiuso, lanciare lo script da console con il comando
 python aggiornaLibri.py
-
 il programma aggiornerà le righe e salverà il file, lasciandolo aperto in Excel
+
+4) copiare il file aggiornato nel suo percorso originale, sovrascrivendo il file obsoleto
